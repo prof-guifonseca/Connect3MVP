@@ -425,6 +425,25 @@ pre code {
   background: var(--color-primary-active);
 }
 
+/* Make primary buttons lighter when used in service cards and hero sections.  
+   These overrides apply only within the landing page sections to avoid dark backgrounds. */
+.services .service-card .btn--primary,
+.hero-cta {
+  background: rgba(var(--color-teal-500-rgb), 0.12);
+  color: var(--color-primary);
+  border: 1px solid var(--color-card-border);
+}
+
+.services .service-card .btn--primary:hover,
+.hero-cta:hover {
+  background: rgba(var(--color-teal-500-rgb), 0.18);
+}
+
+.services .service-card .btn--primary:active,
+.hero-cta:active {
+  background: rgba(var(--color-teal-500-rgb), 0.25);
+}
+
 .btn--secondary {
   background: var(--color-secondary);
   color: var(--color-text);
@@ -446,6 +465,22 @@ pre code {
 
 .btn--outline:hover {
   background: var(--color-secondary);
+}
+
+/* Light variant for buttons, using a soft tint of the primary color.
+   Useful for call‑to‑actions where darker backgrounds should be avoided. */
+.btn--light {
+  background: rgba(var(--color-teal-500-rgb), 0.1);
+  color: var(--color-primary);
+  border: 1px solid var(--color-card-border);
+}
+
+.btn--light:hover {
+  background: rgba(var(--color-teal-500-rgb), 0.15);
+}
+
+.btn--light:active {
+  background: rgba(var(--color-teal-500-rgb), 0.2);
 }
 
 .btn--sm {
@@ -958,16 +993,17 @@ html {
   margin-top: var(--space-16);
   padding: var(--space-16) var(--space-32);
   font-size: var(--font-size-lg);
-  background: var(--ncs-gradient);
-  color: var(--ncs-white);
-  border: none;
+  /* Use a lighter gradient for the main hero call to action to avoid dark backgrounds */
+  background: var(--ncs-gradient-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-card-border);
   border-radius: var(--radius-lg);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+  box-shadow: 0 4px 12px rgba(var(--color-teal-500-rgb), 0.15);
 }
 
 .hero-cta:hover {
