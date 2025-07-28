@@ -11,9 +11,13 @@ function toggleMobileMenu() {
     if (mobileMenuToggle && navLinks) {
         mobileMenuToggle.classList.toggle('active');
         navLinks.classList.toggle('mobile-active');
-        
+        // Determine whether the mobile menu is now open
+        const isOpen = navLinks.classList.contains('mobile-active');
+        // Set appropriate accessibility state on the toggle button
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen.toString());
+
         // Prevent body scroll when menu is open
-        if (navLinks.classList.contains('mobile-active')) {
+        if (isOpen) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = '';
@@ -26,6 +30,8 @@ function closeMobileMenu() {
     if (mobileMenuToggle && navLinks) {
         mobileMenuToggle.classList.remove('active');
         navLinks.classList.remove('mobile-active');
+        // Update aria-expanded when the menu closes
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 }
