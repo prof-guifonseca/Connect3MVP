@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-color-scheme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,12 +23,14 @@
                 </div>
                 <span class="brand-text">Nossa Comunidade Sustentável</span>
             </div>
-            <button class="mobile-menu-toggle" aria-label="Abrir menu">
+            <!-- The mobile menu toggle includes accessible attributes for assistive technologies -->
+            <button class="mobile-menu-toggle" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <ul class="nav-links">
+            <!-- Provide an id so the mobile toggle can target this list via aria-controls -->
+            <ul class="nav-links" id="mobile-menu">
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#sobre">Sobre</a></li>
